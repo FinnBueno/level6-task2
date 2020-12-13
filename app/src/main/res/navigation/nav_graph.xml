@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/MoviesFragment"
-        android:name="com.peakfinn.madlevel6task2.MoviesFragment"
+        android:name="com.peakfinn.madlevel6task2.movies.MoviesFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_movies">
 
