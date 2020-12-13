@@ -3,7 +3,7 @@ package com.peakfinn.madlevel6task2.data
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 
-const val key: String = "" // TODO
+const val key: String = "4f82da1a9b87c949168917d795bcac20" // TODO
 
 /**
  * Created by Finn Bon on 13/12/2020.
@@ -13,17 +13,16 @@ class MovieRepository {
 
     private val _movies: MutableLiveData<ArrayList<Movie>> = MutableLiveData()
 
-    val trivia: LiveData<ArrayList<Movie>>
+    val movies: LiveData<ArrayList<Movie>>
         get() = _movies
 
     suspend fun getMovies(year: Int)  {
         try {
-            //timeout the request after 5 seconds
             _movies.value = apiService.getMovies(key, year).movies
         } catch (error: Throwable) {
-            throw TriviaRefreshError("Unable to get popular movies", error)
+            throw MovieRefreshError("Unable to get popular movies", error)
         }
     }
 
-    class TriviaRefreshError(message: String, cause: Throwable) : Throwable(message, cause)
+    class MovieRefreshError(message: String, cause: Throwable) : Throwable(message, cause)
 }

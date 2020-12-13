@@ -7,13 +7,30 @@
 
     <fragment
         android:id="@+id/MovieFragment"
-        android:name="com.peakfinn.madlevel6task2.MovieFragment"
+        android:name="com.peakfinn.madlevel6task2.movie.MovieFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_movie">
 
-        <action
-            android:id="@+id/movie_to_movies"
-            app:destination="@id/MoviesFragment" />
+        <argument
+            android:name="title"
+            app:argType="string"
+            />
+        <argument
+            android:name="overview"
+            app:argType="string"
+            />
+        <argument
+            android:name="date"
+            app:argType="string"
+            />
+        <argument
+            android:name="backdrop"
+            app:argType="string"
+            />
+        <argument
+            android:name="poster"
+            app:argType="string"
+            />
     </fragment>
     <fragment
         android:id="@+id/MoviesFragment"

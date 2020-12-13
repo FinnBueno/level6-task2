@@ -11,7 +11,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 class MovieApi {
     companion object {
         // The base url off the api.
-        private const val baseUrl = "https://api.themoviedb.org/3/"
+        private const val baseUrl = "https://api.themoviedb.org/"
+
+        // url for retrieving images
+        const val imageUrl = "https://image.tmdb.org/t/p/w500/"
 
         /**
          * @return [TriviaApiService] The service class off the retrofit client.

@@ -8,9 +8,9 @@ import retrofit2.http.Query
  */
 interface MovieApiService {
     // The GET method needed to retrieve a random number trivia.
-    @GET("/discover/movie?json")
+    @GET("/3/discover/movie")
     suspend fun getMovies(
-        @Query("apiKey") api_key: String,
+        @Query("api_key") api_key: String,
         @Query("year") year: Int
     ): Movies
 }
