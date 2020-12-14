@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.peakfinn.madlevel6task2.R
@@ -47,7 +48,8 @@ class MoviesFragment : Fragment() {
             viewModel.getMovies(yearInput.text.toString().toInt())
         }
 
-        moviesRv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+//        moviesRv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        moviesRv.layoutManager = GridLayoutManager(context, 2, LinearLayoutManager.VERTICAL, false)
         moviesRv.adapter = adapter
 
         observeYear()
