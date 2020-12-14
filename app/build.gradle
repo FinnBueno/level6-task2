@@ -3,11 +3,16 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+def apikeyPropertiesFile = rootProject.file("apikey.properties")
+def apikeyProperties = new Properties()
+apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
     defaultConfig {
+        buildConfigField("String", "MOVIEDB_KEY", apikeyProperties['MOVIEDB_KEY'])
         applicationId "com.peakfinn.madlevel6task2"
         minSdkVersion 23
         targetSdkVersion 29

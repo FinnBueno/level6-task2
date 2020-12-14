@@ -2,8 +2,9 @@ package com.peakfinn.madlevel6task2.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.peakfinn.madlevel6task2.BuildConfig
 
-const val key: String = "4f82da1a9b87c949168917d795bcac20" // TODO
+const val key = BuildConfig.MOVIEDB_KEY
 
 /**
  * Created by Finn Bon on 13/12/2020.
